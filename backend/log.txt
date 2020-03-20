@@ -1,0 +1,27 @@
+Starting logging system for selected meter 1
+Database connection open
+Selecting DB
+Found Meter - Main (above sink)
+WARNING:pyloopenergy.loop_energy:No updates for 60 - reconnecting
+ERROR:pyloopenergy.loop_energy:Could not connect to https://www.your-loop.com
+ERROR:pyloopenergy.loop_energy:Please check your keys are correct. Terminating
+Exception in thread LoopEnergy Event Thread:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/threading.py", line 914, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.5/threading.py", line 862, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/www/jbithell.com/projects/psc/energy/backend/pyloopenergy/pyloopenergy/loop_energy.py", line 166, in _run_event_thread
+    LOG.debug('LoopEnergy thread poll')
+  File "/usr/local/lib/python3.5/dist-packages/socketIO_client/__init__.py", line 215, in __exit__
+    self.disconnect()
+  File "/usr/local/lib/python3.5/dist-packages/socketIO_client/__init__.py", line 299, in disconnect
+    namespace.on_disconnect()
+  File "/var/www/jbithell.com/projects/psc/energy/backend/pyloopenergy/pyloopenergy/loop_energy.py", line 123, in on_disconnect
+    self.terminate()
+  File "/var/www/jbithell.com/projects/psc/energy/backend/pyloopenergy/pyloopenergy/loop_energy.py", line 242, in terminate
+    self._event_thread.join()
+  File "/usr/lib/python3.5/threading.py", line 1051, in join
+    raise RuntimeError("cannot join current thread")
+RuntimeError: cannot join current thread
+
